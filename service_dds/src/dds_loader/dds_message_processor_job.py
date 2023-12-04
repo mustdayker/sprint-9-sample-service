@@ -2,18 +2,20 @@ import json
 from logging import Logger
 from typing import List, Dict
 from datetime import datetime
-
+from uuid import UUID
 from lib.kafka_connect import KafkaConsumer, KafkaProducer
 
 from dds_loader.repository import DdsRepository
 import time
+
 class DdsMessageProcessor:
     def __init__(self,
                  consumer: KafkaConsumer,
                  producer: KafkaProducer,
                  dds_repository: DdsRepository,
                  batch_size: int,
-                 logger: Logger) -> None:
+                 logger: Logger
+                 ) -> None:
         self._consumer = consumer
         self._producer = producer
         self._dds_repository = dds_repository

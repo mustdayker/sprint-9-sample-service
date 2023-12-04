@@ -7,6 +7,7 @@ from lib.kafka_connect import KafkaConsumer, KafkaProducer
 from lib.redis import RedisClient
 from stg_loader.repository import StgRepository
 import time
+
 class StgMessageProcessor:
     def __init__(self,
                  consumer: KafkaConsumer,
