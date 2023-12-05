@@ -38,6 +38,8 @@ class StgMessageProcessor:
             self._logger.info(f"{datetime.utcnow()}: Message received")
 
             order = msg['payload']
+
+            # Загрузка данных в Staging слой PostgreSQL
             self._stg_repository.order_events_insert(
                 msg["object_id"],
                 msg["object_type"],
