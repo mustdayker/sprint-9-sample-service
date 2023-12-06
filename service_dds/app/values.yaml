@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   # Link to your container registry. You will launch it in Yandex Cloud.
-  repository: cr.yandex/crp36vt87iejljd9gm8c/dds_service 
+  repository: cr.yandex/crp36vt87iejljd9gm8c/dds_service
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v2023-12-06-r1"
