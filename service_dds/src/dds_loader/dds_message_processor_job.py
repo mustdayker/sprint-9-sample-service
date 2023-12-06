@@ -186,16 +186,6 @@ class DdsMessageProcessor:
                 self._uuid_gen(order["status"])
                 )
 
-
-            # # Создание сообщения для топика dds-service-orders
-            # dst_msg = {
-            #     "object_id": order["user"]["id"],
-            #     "object_type": "cdm_counter",
-            #     "payload": {
-            #         "category_counter": self._category_counter(order['products']),
-            #         "products_counter": self._product_counter(order['products'])
-            #     }
-            # }
             
             # Создание сообщения для топика dds-service-orders
             dst_msg = {
@@ -219,13 +209,3 @@ class DdsMessageProcessor:
     # Функция для генерации uuid
     def _uuid_gen(self, keygen):
         return uuid5(UUID('7f288a2e-0ad0-4039-8e59-6c9838d87307'), keygen)
-    
-    # # Функция для подсчета категорий
-    # def _category_counter(self, cat_array):
-    #     df = pd.DataFrame(cat_array)[['category', 'quantity']]
-    #     return df.groupby(['category']).sum().reset_index().to_dict('records')
-    
-    # # Функция для подсчета продуктов
-    # def _product_counter(self, prod_array):
-    #     df = pd.DataFrame(prod_array)[['id', 'name', 'quantity']]
-    #     return df.groupby(['id', 'name']).sum().reset_index().to_dict('records')
