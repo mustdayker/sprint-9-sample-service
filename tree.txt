@@ -1,0 +1,131 @@
+Структура папок тома OS
+Серийный номер тома: B80B-5088
+C:.
+|   .env
+|   .gitignore
+|   docker-compose.yml
+|   README.md
+|   tree.txt
+|   
++---backup
+|       backup_final.zip
+|       backup_start.zip
+|       
++---service_cdm
+|   |   dockerfile
+|   |   requirements.txt
+|   |   
+|   +---app
+|   |   |   .helmignore
+|   |   |   Chart.yaml
+|   |   |   values.yaml
+|   |   |   
+|   |   \---templates
+|   |           configmap.yaml
+|   |           deployment.yaml
+|   |           _helpers.tpl
+|   |           
+|   \---src
+|       |   app.py
+|       |   app_config.py
+|       |   __init__.py
+|       |   
+|       +---cdm_loader
+|       |   |   cdm_message_processor_job.py
+|       |   |   __init__.py
+|       |   |   
+|       |   \---repository
+|       |           cdm_repository.py
+|       |           __init__.py
+|       |           
+|       \---lib
+|           |   __init__.py
+|           |   
+|           +---kafka_connect
+|           |       kafka_connectors.py
+|           |       __init__.py
+|           |       
+|           \---pg
+|                   pg_connect.py
+|                   __init__.py
+|                   
++---service_dds
+|   |   dockerfile
+|   |   requirements.txt
+|   |   
+|   +---app
+|   |   |   .helmignore
+|   |   |   Chart.yaml
+|   |   |   values.yaml
+|   |   |   
+|   |   \---templates
+|   |           configmap.yaml
+|   |           deployment.yaml
+|   |           _helpers.tpl
+|   |           
+|   \---src
+|       |   app.py
+|       |   app_config.py
+|       |   __init__.py
+|       |   
+|       +---dds_loader
+|       |   |   dds_message_processor_job.py
+|       |   |   __init__.py
+|       |   |   
+|       |   \---repository
+|       |           dds_repository.py
+|       |           __init__.py
+|       |           
+|       \---lib
+|           |   __init__.py
+|           |   
+|           +---kafka_connect
+|           |       kafka_connectors.py
+|           |       __init__.py
+|           |       
+|           \---pg
+|                   pg_connect.py
+|                   __init__.py
+|                   
+\---service_stg
+    |   dockerfile
+    |   requirements.txt
+    |   
+    +---app
+    |   |   .helmignore
+    |   |   Chart.yaml
+    |   |   values.yaml
+    |   |   
+    |   \---templates
+    |           configmap.yaml
+    |           deployment.yaml
+    |           _helpers.tpl
+    |           
+    \---src
+        |   app.py
+        |   app_config.py
+        |   __init__.py
+        |   
+        +---lib
+        |   |   __init__.py
+        |   |   
+        |   +---kafka_connect
+        |   |       kafka_connectors.py
+        |   |       __init__.py
+        |   |       
+        |   +---pg
+        |   |       pg_connect.py
+        |   |       __init__.py
+        |   |       
+        |   \---redis
+        |           redis_client.py
+        |           __init__.py
+        |           
+        \---stg_loader
+            |   stg_message_processor_job.py
+            |   __init__.py
+            |   
+            \---repository
+                    stg_repository.py
+                    __init__.py
+                    
